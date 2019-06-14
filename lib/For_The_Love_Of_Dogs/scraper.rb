@@ -35,32 +35,16 @@ class ForTheLoveOfDogs::Scraper
     profile = Nokogiri::HTML(html)
 
 
-      profile_url = "./fixtures/student-site/students/joe-burgess.html"
+ 
+ 
+ def self.scrape_pet_profile(url)
+    pet_profile_details = {}
+
+    pet_profile = "http://bestfriends.org" + url
+    doc = Nokogiri::HTML(open(pet_profile))
 
 
 
-
-
-
-    profile.css("div.main-wrapper.profile .social-icon-container a").each do |social|
-      if social.attribute("href").value.include?("twitter")
-        student_profile[:twitter] = social.attribute("href").value
-      elsif social.attribute("href").value.include?("linkedin")
-        student_profile[:linkedin] = social.attribute("href").value
-      elsif social.attribute("href").value.include?("github")
-        student_profile[:github] = social.attribute("href").value
-      else
-        student_profile[:blog] = social.attribute("href").value
-      end
-    end
-
-    student_profile[:profile_quote] = profile.css("div.main-wrapper.profile .vitals-text-container .profile-quote").text
-    student_profile[:bio] = profile.css("div.main-wrapper.profile .description-holder p").text
-    doc.css(".main-wrapper div.social-icon-container").each do |link|
-    array <<  link.css("a").attribute("href").value
-
-    student_profile
-  end
 
 
 
