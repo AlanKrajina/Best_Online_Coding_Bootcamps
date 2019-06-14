@@ -11,7 +11,7 @@ end
   puts "These are all of our furry companions that you can take home today:"  
   
 
-    @dogs = ForTheLoveOfDogs::Dogs.today
+  #  @dogs = ForTheLoveOfDogs::Dogs.today
     @dogs.each.with_index(1) do |dog, i|
       puts "#{i}. #{dog.name} - #{dog.age} - #{dog.centre}"
     end
