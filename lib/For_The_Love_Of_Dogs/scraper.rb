@@ -8,18 +8,23 @@ class ForTheLoveOfDogs::Scraper
     doc = Nokogiri::HTML(html)
     bootcamps = []
 
- #   doc.css(".ranking-item ").each do |dog|
-#      dogs << {
-#        :name => dog.css(".ranking-item__header--left a").text,
-#        
-#        :age => dog.css(".animal_name a.ng-binding").text,
-#        :centre => dog.css(".animal_name a.ng-binding").text
+   doc.css(".ranking-item").each do |dog|
+      bootcamps << {
+        :name => dog.css("div.ranking-item__header--left h3 a").text,
         
-#      }
+        :rating => dog.css("div.ranking-item__header--left span.ranking-item__rating--value").text.split.join(' '),
+        :subjects => dog.css(".animal_name a.ng-binding").text
+        
+      }
      
-#    end
+    end
     
      binding.pry
+
+    bootcamps
+  end     
+end     
+     
 #doc.css(".ranking-item div.ranking-item__header--left h3 a").text
 #[4] pry(ForTheLoveOfDogs::Scraper)> doc.css(".ranking-item div.ranking-item__header--left h3 a").text
 #=> "App AcademyGeneral AssemblyBlocSpringboardThinkfulNYC Data Science AcademyCoding DojoFlatiron SchoolThe Tech AcademyProduct SchoolDataquestHack ReactorActualizeCodesmithRMOTRBrainStationLambda SchoolDesignlabFullstack AcademyThe Software GuildAltcademyMetisGalvanizeDev MountainSkillcrushCareerFoundryFirst Step CodingCode InstituteEvolve Security AcademyHyperion DevelopmentV SchoolDataCampHelio Training BootcampByte AcademyThe Firehose ProjectCodingNomadsLevelBottegaB9labAcademyThe Data IncubatorOpenClassroomsDesign Sprint SchoolBitDegreeScience to Data ScienceCodecademyTreehouse"
@@ -28,10 +33,7 @@ class ForTheLoveOfDogs::Scraper
 
 
 
-    dogs
-  end
 
 #  def self.scrape_bootcamp_page(bootcamp_url)
 
 #  end
-end
