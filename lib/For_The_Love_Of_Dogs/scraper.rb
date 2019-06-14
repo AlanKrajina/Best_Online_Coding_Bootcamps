@@ -8,28 +8,28 @@ class ForTheLoveOfDogs::Scraper
     doc = Nokogiri::HTML(html)
     bootcamps = []
 
-   doc.css(".ranking-item").each do |bootcamp|
+
+  doc.css(".ranking-item").each do |bootcamp|
       bootcamps << {
         :name => bootcamp.css("div.ranking-item__header--left h3 a").text,
         :rating => bootcamp.css("div.ranking-item__header--left span.ranking-item__rating--value").text.split.join(' '),
-        :subjects => bootcamp.css("table tr:nth-child(3) td").text.split.join(' '),
-        
+        :subjects => bootcamp.css("table tr:nth-child(3) td").text.split.join(' ')
       }
-     
-    end
-    
-     binding.pry
+  end
+# problem je prvi ranking item {:name=>"", :rating=>"", :subjects=>""}    
+#     if bootcamp.css("div.ranking-item__header--left h3 a").text != nil
+# end
+
+    binding.pry
 
     bootcamps
   end     
+
+
+  def self.scrape_bootcamp_page(bootcamp_url)
+
+  end
+
+
+
 end     
-
-
-
-
-
-
-
-#  def self.scrape_bootcamp_page(bootcamp_url)
-
-#  end
