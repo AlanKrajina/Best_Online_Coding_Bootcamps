@@ -8,7 +8,7 @@ class ForTheLoveOfDogs::Scraper
     doc = Nokogiri::HTML(html)
     dogs = []
 
-    doc.css(".listing_container").each do |dog|
+    doc.css(".listing_animal").each do |dog|
       dogs << {
         :name => dog.css(".animal_name a.ng-binding").text,
         
@@ -16,8 +16,9 @@ class ForTheLoveOfDogs::Scraper
         :centre => dog.css(".animal_name a.ng-binding").text
         
       }
+     binding.pry
+     
     end
-    binding.pry
     
     dogs
   end
