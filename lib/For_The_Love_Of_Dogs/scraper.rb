@@ -4,22 +4,30 @@ require 'nokogiri'
 class ForTheLoveOfDogs::Scraper
 
   def self.scrape_index_page
-    html = open("https://www.battersea.org.uk/dogs/dog-rehoming-gallery")
+    html = open("https://www.switchup.org/rankings/best-online-bootcamps")
     doc = Nokogiri::HTML(html)
-    dogs = []
+    bootcamps = []
 
-    doc.css(".listing_animal").each do |dog|
-      dogs << {
-        :name => dog.css(".animal_name a.ng-binding").text,
+ #   doc.css(".ranking-item ").each do |dog|
+#      dogs << {
+#        :name => dog.css(".ranking-item__header--left a").text,
+#        
+#        :age => dog.css(".animal_name a.ng-binding").text,
+#        :centre => dog.css(".animal_name a.ng-binding").text
         
-        :age => dog.css(".animal_name a.ng-binding").text,
-        :centre => dog.css(".animal_name a.ng-binding").text
-        
-      }
-     binding.pry
+#      }
      
-    end
+#    end
     
+     binding.pry
+#doc.css(".ranking-item div.ranking-item__header--left h3 a").text
+#[4] pry(ForTheLoveOfDogs::Scraper)> doc.css(".ranking-item div.ranking-item__header--left h3 a").text
+#=> "App AcademyGeneral AssemblyBlocSpringboardThinkfulNYC Data Science AcademyCoding DojoFlatiron SchoolThe Tech AcademyProduct SchoolDataquestHack ReactorActualizeCodesmithRMOTRBrainStationLambda SchoolDesignlabFullstack AcademyThe Software GuildAltcademyMetisGalvanizeDev MountainSkillcrushCareerFoundryFirst Step CodingCode InstituteEvolve Security AcademyHyperion DevelopmentV SchoolDataCampHelio Training BootcampByte AcademyThe Firehose ProjectCodingNomadsLevelBottegaB9labAcademyThe Data IncubatorOpenClassroomsDesign Sprint SchoolBitDegreeScience to Data ScienceCodecademyTreehouse"
+
+
+
+
+
     dogs
   end
 
