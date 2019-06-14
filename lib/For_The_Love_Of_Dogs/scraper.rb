@@ -8,12 +8,11 @@ class ForTheLoveOfDogs::Scraper
     doc = Nokogiri::HTML(html)
     bootcamps = []
 
-   doc.css(".ranking-item").each do |dog|
+   doc.css(".ranking-item").each do |bootcamp|
       bootcamps << {
-        :name => dog.css("div.ranking-item__header--left h3 a").text,
-        
-        :rating => dog.css("div.ranking-item__header--left span.ranking-item__rating--value").text.split.join(' '),
-        :subjects => dog.css(".animal_name a.ng-binding").text
+        :name => bootcamp.css("div.ranking-item__header--left h3 a").text,
+        :rating => bootcamp.css("div.ranking-item__header--left span.ranking-item__rating--value").text.split.join(' '),
+        :subjects => bootcamp.css("table tr:nth-child(3) td").text.split.join(' '),
         
       }
      
@@ -24,10 +23,7 @@ class ForTheLoveOfDogs::Scraper
     bootcamps
   end     
 end     
-     
-#doc.css(".ranking-item div.ranking-item__header--left h3 a").text
-#[4] pry(ForTheLoveOfDogs::Scraper)> doc.css(".ranking-item div.ranking-item__header--left h3 a").text
-#=> "App AcademyGeneral AssemblyBlocSpringboardThinkfulNYC Data Science AcademyCoding DojoFlatiron SchoolThe Tech AcademyProduct SchoolDataquestHack ReactorActualizeCodesmithRMOTRBrainStationLambda SchoolDesignlabFullstack AcademyThe Software GuildAltcademyMetisGalvanizeDev MountainSkillcrushCareerFoundryFirst Step CodingCode InstituteEvolve Security AcademyHyperion DevelopmentV SchoolDataCampHelio Training BootcampByte AcademyThe Firehose ProjectCodingNomadsLevelBottegaB9labAcademyThe Data IncubatorOpenClassroomsDesign Sprint SchoolBitDegreeScience to Data ScienceCodecademyTreehouse"
+
 
 
 
