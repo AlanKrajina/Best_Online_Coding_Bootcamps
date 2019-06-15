@@ -20,31 +20,19 @@ class ForTheLoveOfDogs::Scraper
     bootcamps
   end     
 
-=begin
-  def self.scrape_bootcamp_page
+  def self.scrape_bootcamp_page(url)
 
     bootcamp_profile = {}
     
-# html link svakog    
-    html = open(profile_url)
-    profile = Nokogiri::HTML(html)
+    bootcamp_profile = "https://www.switchup.org/rankings/best-online-bootcamps" + url
+    doc = Nokogiri::HTML(open(bootcamp_profile))
 
 
  
  
- def self.scrape_pet_profile(url)
-    pet_profile_details = {}
-
-    pet_profile = "http://bestfriends.org" + url
-    doc = Nokogiri::HTML(open(pet_profile))
-
-
-
-
 
 
   end
 
 
-=end
 end     
