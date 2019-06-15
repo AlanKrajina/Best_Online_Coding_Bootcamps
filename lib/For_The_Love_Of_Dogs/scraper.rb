@@ -13,19 +13,20 @@ class ForTheLoveOfDogs::Scraper
       bootcamps << {
         :name => bootcamp.css("div.ranking-item__header--left h3 a").text,
         :rating => bootcamp.css("div.ranking-item__header--left span.ranking-item__rating--value").text.split.join(' '),
-        :subjects => bootcamp.css("table tr:nth-child(3) td").text.split.join(' ')
+        :subjects => bootcamp.css("table tr:nth-child(3) td").text.split.join(' '),
+        :url => bootcamp.css("div.ranking-item__header h3 a").attribute("href").value 
       }
   end
 # problem je prvi ranking item {:name=>"", :rating=>"", :subjects=>""}    
 #     if bootcamp.css("div.ranking-item__header--left h3 a").text != nil
 # end
 
-    binding.pry
+#    binding.pry
 
     bootcamps
   end     
 
-
+=begin
   def self.scrape_bootcamp_page
 
     bootcamp_profile = {}
@@ -51,5 +52,5 @@ class ForTheLoveOfDogs::Scraper
   end
 
 
-
+=end
 end     
