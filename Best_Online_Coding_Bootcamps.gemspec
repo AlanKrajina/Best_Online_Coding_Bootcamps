@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "For_The_Love_Of_Dogs/version"
+require "Best_Online_Coding_Bootcamps/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "For_The_Love_Of_Dogs"
-  spec.version       = ForTheLoveOfDogs::VERSION
+  spec.name          = "Best_Online_Coding_Bootcamps"
+  spec.version       = BestOnlineCodingBootcamps::VERSION
   spec.authors       = ["'Alan Krajina'"]
   spec.email         = ["'alankrajina88@gmail.com'"]
 

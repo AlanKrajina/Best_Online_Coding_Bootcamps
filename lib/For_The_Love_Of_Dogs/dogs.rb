@@ -1,5 +1,0 @@
-class ForTheLoveOfDogs::Dogs
-
-
-  
-end

@@ -1,0 +1,5 @@
+
+require_relative "../lib/Best_Online_Coding_Bootcamps"
+
+
+BestOnlineCodingBootcamps::Scraper.scrape_index_page

@@ -1,4 +1,4 @@
-class ForTheLoveOfDogs::CLI
+class BestOnlineCodingBootcamps::CLI
  
 def call
   puts "Welcome to our little shelter 'For_The_Love_Of_Dogs'!"

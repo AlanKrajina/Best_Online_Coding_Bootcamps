@@ -1,7 +1,7 @@
 require 'open-uri'
 require 'nokogiri'
 
-class ForTheLoveOfDogs::Scraper
+class BestOnlineCodingBootcamps::Scraper
 
   def self.scrape_index_page
     html = open("https://www.switchup.org/rankings/best-online-bootcamps")
@@ -17,6 +17,7 @@ class ForTheLoveOfDogs::Scraper
         :url => bootcamp.css("div.ranking-item__header h3 a").attribute("href").value 
       }
   end
+  binding.pry
     bootcamps
   end     
 
