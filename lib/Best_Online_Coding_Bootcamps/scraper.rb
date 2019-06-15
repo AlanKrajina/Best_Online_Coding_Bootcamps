@@ -17,23 +17,23 @@ class BestOnlineCodingBootcamps::Scraper
         :url => bootcamp.css("div.ranking-item__header h3 a").attribute("href").value 
       }
   end
-  binding.pry
+#  binding.pry
     bootcamps
   end     
 
-  def self.scrape_bootcamp_page(url)
+#  def self.scrape_bootcamp_page(url)
 
-    bootcamp_profile = {}
+ #   bootcamp_profile = {}
     
-    bootcamp_profile = "https://www.switchup.org/rankings/best-online-bootcamps" + url
-    doc = Nokogiri::HTML(open(bootcamp_profile))
+#    bootcamp_profile = "https://www.switchup.org/rankings/best-online-bootcamps" + url
+#    doc = Nokogiri::HTML(open(bootcamp_profile))
 
 
  
  
 
 
-  end
+#  end
 
 
 end     

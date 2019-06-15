@@ -1,5 +1,0 @@
-class BestOnlineCodingBootcamps::Dogs
-
-
-  
-end
