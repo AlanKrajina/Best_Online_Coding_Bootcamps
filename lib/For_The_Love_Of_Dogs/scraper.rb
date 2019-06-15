@@ -9,7 +9,7 @@ class ForTheLoveOfDogs::Scraper
     bootcamps = []
 
 
-  doc.css(".ranking-item").each do |bootcamp|
+  doc.css("li div.ranking-item").each do |bootcamp|
       bootcamps << {
         :name => bootcamp.css("div.ranking-item__header--left h3 a").text,
         :rating => bootcamp.css("div.ranking-item__header--left span.ranking-item__rating--value").text.split.join(' '),
@@ -17,12 +17,6 @@ class ForTheLoveOfDogs::Scraper
         :url => bootcamp.css("div.ranking-item__header h3 a").attribute("href").value 
       }
   end
-# problem je prvi ranking item {:name=>"", :rating=>"", :subjects=>""}    
-#     if bootcamp.css("div.ranking-item__header--left h3 a").text != nil
-# end
-
-#    binding.pry
-
     bootcamps
   end     
 
