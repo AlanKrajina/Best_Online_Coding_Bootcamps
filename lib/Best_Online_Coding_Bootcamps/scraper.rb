@@ -15,13 +15,15 @@ class BestOnlineCodingBootcamps::Scraper
         subjects = camp.css("table tr:nth-child(3) td").text.split.join(' ')
         url = camp.css("div.ranking-item__header h3 a").attribute("href").value 
         BestOnlineCodingBootcamps::Bootcamps.new(name, rating, subjects, url)
+        
     end
   end     
 
   def self.scrape_details(bootcamps)
-    html = open("https://www.switchup.org/rankings/best-online-bootcamps#{bootcamps.url}")
+    html = open("https://www.switchup.org#{bootcamps.url}")
     doc = Nokogiri::HTML(html)
-    binding.pry
+#    binding.pry
+    
 #      about = doc.css("h2.topic-title").text
 #      website =
 #      locations =

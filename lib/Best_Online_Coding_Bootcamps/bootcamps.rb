@@ -9,15 +9,16 @@ class BestOnlineCodingBootcamps::Bootcamps
     @rating = rating
     @subjects = subjects
     @url = url
-    save
+    @about = about
+    @website = website
+    @locations = locations
+    @programs = programs
+    @scholarships = scholarships
+    @info = info
+    @@all << self
   end
 
- def save
-   @@all << self
- end
-
  def self.all
-   @@all.empty? ? BestOnlineCodingBootcamps::Scraper.scrape_index_page : nil
    @@all
  end
 
