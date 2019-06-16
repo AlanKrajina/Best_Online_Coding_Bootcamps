@@ -1,6 +1,21 @@
 class BestOnlineCodingBootcamps::CLI
+  
+  def call(bootcamps)
+
+    puts "#{bootcamps.name},#{bootcamps.rating},#{bootcamps.url},#{bootcamps.about},#{bootcamps.website},#{bootcamps.locations},#{bootcamps.programs},#{bootcamps.scholarships}#"
+
+  end
+
+end
+
+
+
+
+
+
+
 =begin
-def call
+
   puts "Welcome to our little shelter 'For_The_Love_Of_Dogs'!"
   show_all_dogs
   show_dog
@@ -57,5 +72,5 @@ end
   def goodbye
     puts "Hope you liked our little furries. Come back again soon!"
   end
-=end
 end
+=end

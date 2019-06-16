@@ -31,5 +31,6 @@ class BestOnlineCodingBootcamps::Scraper
       if doc.css("div.extra-info p:nth-child(2) span").text.include? "..." then programs = doc.css("div.extra-info p:nth-child(2) span a").attribute("onclick").value[23..-18] elsif !doc.css("div.extra-info p:nth-child(2) span").text.include? "..." then programs = doc.css("div.extra-info p:nth-child(2) span").text.split.join(' ') end
         
       if doc.css("div.extra-info p:nth-child(1) span").text.include? "..." then locations = doc.css("div.extra-info p:nth-child(1) span a").attribute("onclick").value[23..-18] elsif !doc.css("div.extra-info p:nth-child(1) span").text.include? "..." then locations = doc.css("div.extra-info p:nth-child(1) span").text.split.join(' ') end
+        
   end
 end  
