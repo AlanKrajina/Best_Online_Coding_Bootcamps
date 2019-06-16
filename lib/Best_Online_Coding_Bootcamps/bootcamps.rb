@@ -22,8 +22,8 @@ class BestOnlineCodingBootcamps::Bootcamps
    @@all
  end
 
- def get_details
-   BestOnlineCodingBootcamps::Scraper.scrape_details(self)
- end
+# def get_details
+#   BestOnlineCodingBootcamps::Scraper.scrape_details(self)
+# end
  
 end

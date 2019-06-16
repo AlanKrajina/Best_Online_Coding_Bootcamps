@@ -23,7 +23,6 @@ class BestOnlineCodingBootcamps::Scraper
     html = open("https://www.switchup.org#{bootcamps.url}")
     doc = Nokogiri::HTML(html)
 #    binding.pry
-    
 #      about = doc.css("h2.topic-title").text
 #      website =
 #      locations =
@@ -31,4 +30,5 @@ class BestOnlineCodingBootcamps::Scraper
 #      scholarships = 
 #      info =
   end
+  
 end  
