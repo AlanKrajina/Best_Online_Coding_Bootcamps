@@ -16,7 +16,12 @@ class BestOnlineCodingBootcamps::Bootcamps
    @@all << self
  end
 
+ def self.all
+   @@all
+ end
 
-
-
+ def get_details
+   BestOnlineCodingBootcamps::Scraper.scrape_details(self)
+ end
+ 
 end
