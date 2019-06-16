@@ -6,27 +6,26 @@ class BestOnlineCodingBootcamps::Scraper
 
   def self.scrape_index_page
  #   html = open("https://www.switchup.org/rankings/best-online-bootcamps")
-    html = open("https://www.switchup.org/bootcamps/general-assembly")
+    html = open("https://www.switchup.org/bootcamps/nyc-data-science-academy")
     doc = Nokogiri::HTML(html)
     
         about = doc.css("h2.topic-title").text.split.join(' ')
         website = doc.css("div.ranking-item a").attribute("href").value 
         locations = doc.css("div.extra-info p:nth-child(1) span").text.split.join(' ')
-        programs = doc.css("div.extra-info p:nth-child(2) span a").attribute("onclick").value[23..-18]
         scholarships = doc.css("div.extra-info p:nth-child(3) span").text.split.join(' ')
         info = doc.css("div.span12 blockquote.topic-text p").text
-    
+        
+        if  doc.css("div.extra-info p:nth-child(2) span").text.include? "..."
+        programs = doc.css("div.extra-info p:nth-child(2) span a").attribute("onclick").value[23..-18]
+          
+        else
+         programs = doc.css("div.extra-info p:nth-child(2) span").text.split.join(' ')
+         
+        end
     binding.pry
   end     
     
-=begin
-[1] pry(BestOnlineCodingBootcamps::Scraper)> locations
-=> "Dallas, Providence, San Diego, San Francisco, Seattle, NYC, Washing... ViewMore"
-[2] pry(BestOnlineCodingBootcamps::Scraper)> programs
-=> "Coding Bootcamps, Web Design (UX/UI), Data Science, Produ... View More"
-[3] pry(BestOnlineCodingBootcamps::Scraper)> scholarships
-=> "General Assembly's Opportunity Fund offers scholarships for women, ... ViewMore"    
-=end
+
 
 =begin
     doc.css("li div.ranking-item").each do |camp|
