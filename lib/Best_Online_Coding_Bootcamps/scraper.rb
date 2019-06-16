@@ -12,11 +12,12 @@ class BestOnlineCodingBootcamps::Scraper
         about = doc.css("h2.topic-title").text.split.join(' ')
         website = doc.css("div.ranking-item a").attribute("href").value 
         locations = doc.css("div.extra-info p:nth-child(1) span").text.split.join(' ')
-        programs = doc.css("div.extra-info p:nth-child(2) span").text.split.join(' ')
+        programs = doc.css("div.extra-info p:nth-child(2) span a").attribute("onclick").value[23..-18]
         scholarships = doc.css("div.extra-info p:nth-child(3) span").text.split.join(' ')
         info = doc.css("div.span12 blockquote.topic-text p").text
     
     binding.pry
+  end     
     
 =begin
 [1] pry(BestOnlineCodingBootcamps::Scraper)> locations
@@ -38,7 +39,6 @@ class BestOnlineCodingBootcamps::Scraper
         
     end
 =end
-  end     
 =begin
   def self.scrape_details(bootcamps)
     html = open("https://www.switchup.org#{bootcamps.url}")
