@@ -14,7 +14,7 @@ class BestOnlineCodingBootcamps::Scraper
         locations = doc.css("div.extra-info p:nth-child(1) span").text.split.join(' ')
         programs = doc.css("div.extra-info p:nth-child(2) span").text.split.join(' ')
         scholarships = doc.css("div.extra-info p:nth-child(3) span").text.split.join(' ')
-        info = doc.css("div.ranking-item__header--left h3 a").text
+        info = doc.css("div.span12 blockquote.topic-text p").text
     
     binding.pry
     
