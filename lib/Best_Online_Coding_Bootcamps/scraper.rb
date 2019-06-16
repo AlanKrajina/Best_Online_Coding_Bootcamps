@@ -17,15 +17,16 @@ class BestOnlineCodingBootcamps::Scraper
         BestOnlineCodingBootcamps::Bootcamps.new(name, rating, subjects, url)
     end
   end     
-  
+
   def self.scrape_details(bootcamps)
-    doc = Nokogiri::HTML(open("https://www.switchup.org/rankings/best-online-bootcamps#{bootcamps.url}"))
-    
-      about = doc.css("h2.topic-title").text
-      website =
-      locations =
-      programs =
-      scholarships = 
-      info =
+    html = open("https://www.switchup.org/rankings/best-online-bootcamps#{bootcamps.url}")
+    doc = Nokogiri::HTML(html)
+    binding.pry
+#      about = doc.css("h2.topic-title").text
+#      website =
+#      locations =
+#      programs =
+#      scholarships = 
+#      info =
   end
 end  

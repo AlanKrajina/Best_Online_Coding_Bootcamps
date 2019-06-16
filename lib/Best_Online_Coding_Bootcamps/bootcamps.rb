@@ -17,6 +17,7 @@ class BestOnlineCodingBootcamps::Bootcamps
  end
 
  def self.all
+   @@all.empty? ? BestOnlineCodingBootcamps::Scraper.scrape_index_page : nil
    @@all
  end
 
