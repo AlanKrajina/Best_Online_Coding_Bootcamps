@@ -1,16 +1,22 @@
 class BestOnlineCodingBootcamps::CLI
   
-  def call(bootcamps)
+  def call
+    put
+  end
 
-    puts "#{bootcamps.name},#{bootcamps.rating},#{bootcamps.url},#{bootcamps.about},#{bootcamps.website},#{bootcamps.locations},#{bootcamps.programs},#{bootcamps.scholarships}#"
 
+  def put(bootcamps)
+      puts "#{bootcamps.name}"
+      puts "#{bootcamps.rating}"
+      puts "#{bootcamps.url}"
+      puts "#{bootcamps.about}"
+      puts "#{bootcamps.website}"
+      puts "#{bootcamps.locations}"
+      puts "#{bootcamps.programs}"
+      puts "#{bootcamps.scholarships}"
   end
 
 end
-
-
-
-
 
 
 
