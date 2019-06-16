@@ -1,6 +1,6 @@
 require "pry"
 class BestOnlineCodingBootcamps::Bootcamps
-    attr_accessor :name, :rating, :subjects, :url
+    attr_accessor :name, :rating, :subjects, :url, :about, :website, :locations, :programs, :scholarships, :info
 
   @@all = []
   
