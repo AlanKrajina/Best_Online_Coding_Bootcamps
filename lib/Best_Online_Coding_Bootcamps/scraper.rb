@@ -9,16 +9,24 @@ class BestOnlineCodingBootcamps::Scraper
     html = open("https://www.switchup.org/bootcamps/general-assembly")
     doc = Nokogiri::HTML(html)
     
-        about = doc.css("h2.topic-title").text
+        about = doc.css("h2.topic-title").text.split.join(' ')
         website = doc.css("div.ranking-item a").attribute("href").value 
-        locations = doc.css("div.ranking-item__header--left h3 a").text
-        programs = doc.css("div.ranking-item__header--left h3 a").text
-        scholarships = doc.css("div.ranking-item__header--left h3 a").text
+        locations = doc.css("div.extra-info p:nth-child(1) span").text.split.join(' ')
+        programs = doc.css("div.extra-info p:nth-child(2) span").text.split.join(' ')
+        scholarships = doc.css("div.extra-info p:nth-child(3) span").text.split.join(' ')
         info = doc.css("div.ranking-item__header--left h3 a").text
     
     binding.pry
     
-    
+=begin
+[1] pry(BestOnlineCodingBootcamps::Scraper)> locations
+=> "Dallas, Providence, San Diego, San Francisco, Seattle, NYC, Washing... ViewMore"
+[2] pry(BestOnlineCodingBootcamps::Scraper)> programs
+=> "Coding Bootcamps, Web Design (UX/UI), Data Science, Produ... View More"
+[3] pry(BestOnlineCodingBootcamps::Scraper)> scholarships
+=> "General Assembly's Opportunity Fund offers scholarships for women, ... ViewMore"    
+=end
+
 =begin
     doc.css("li div.ranking-item").each do |camp|
 
