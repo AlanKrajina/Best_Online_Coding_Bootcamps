@@ -5,14 +5,15 @@ require "pry"
 class BestOnlineCodingBootcamps::Scraper
 
   def self.scrape_index_page
- #   html = open("https://www.switchup.org/rankings/best-online-bootcamps")
-    html = open("https://www.switchup.org/bootcamps/app-academy")
+    html = open("https://www.switchup.org/bootcamps/coding-dojo")
     doc = Nokogiri::HTML(html)
     
         about = doc.css("h2.topic-title").text.split.join(' ')
         website = doc.css("div.ranking-item a").attribute("href").value 
         
-        info = doc.css("div.span12 blockquote.topic-text p").text
+        if doc.css("div.span12 blockquote.topic-text p").text.include? "..." then info = doc.css("div.span12 blockquote.topic-text p a").attribute("onclick").value[35..-25].delete! '\\<>/' elsif !doc.css("div.span12 blockquote.topic-text p").text.include? "..." then info = doc.css("div.span12 blockquote.topic-text p").text.chomp end
+        
+        
         
         if doc.css("div.extra-info p:nth-child(3) span").text.include? "..." then scholarships = doc.css("div.extra-info p:nth-child(3) span a").attribute("onclick").value[23..-18] elsif !doc.css("div.extra-info p:nth-child(3) span").text.include? "..." then scholarships = doc.css("div.extra-info p:nth-child(3) span").text.split.join(' ') end
         
