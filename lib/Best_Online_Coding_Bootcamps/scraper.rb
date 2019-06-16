@@ -9,14 +9,14 @@ class BestOnlineCodingBootcamps::Scraper
     html = open("https://www.switchup.org/bootcamps/general-assembly")
     doc = Nokogiri::HTML(html)
     
-        about = camp.css("div.ranking-item__header--left h3 a").text
-        website = camp.css("div.ranking-item__header--left h3 a").text
-        locations = camp.css("div.ranking-item__header--left h3 a").text
-        programs = camp.css("div.ranking-item__header--left h3 a").text
-        scholarships = camp.css("div.ranking-item__header--left h3 a").text
-        info = camp.css("div.ranking-item__header--left h3 a").text
+        about = doc.css("h2.topic-title").text
+        website = doc.css("div.ranking-item a").attribute("href").value 
+        locations = doc.css("div.ranking-item__header--left h3 a").text
+        programs = doc.css("div.ranking-item__header--left h3 a").text
+        scholarships = doc.css("div.ranking-item__header--left h3 a").text
+        info = doc.css("div.ranking-item__header--left h3 a").text
     
-    
+    binding.pry
     
     
 =begin
