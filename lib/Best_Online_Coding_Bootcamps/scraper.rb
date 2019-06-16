@@ -6,22 +6,27 @@ class BestOnlineCodingBootcamps::Scraper
 
   def self.scrape_index_page
  #   html = open("https://www.switchup.org/rankings/best-online-bootcamps")
-    html = open("https://www.switchup.org/bootcamps/nyc-data-science-academy")
+    html = open("https://www.switchup.org/bootcamps/coding-dojo")
     doc = Nokogiri::HTML(html)
     
         about = doc.css("h2.topic-title").text.split.join(' ')
         website = doc.css("div.ranking-item a").attribute("href").value 
-        locations = doc.css("div.extra-info p:nth-child(1) span").text.split.join(' ')
         scholarships = doc.css("div.extra-info p:nth-child(3) span").text.split.join(' ')
         info = doc.css("div.span12 blockquote.topic-text p").text
         
-        if  doc.css("div.extra-info p:nth-child(2) span").text.include? "..."
-        programs = doc.css("div.extra-info p:nth-child(2) span a").attribute("onclick").value[23..-18]
+        programs = doc.css("div.extra-info p:nth-child(2) span a").attribute("onclick").value[23..-18] unless doc.css("div.extra-info p:nth-child(2) span").text.include? "..."  
+        
+#        foo = true
+#a = foo  ? 'a' : (bar ? 'b' : 'c') #=> "a"
+        
+#        elsif doc.css("div.extra-info p:nth-child(1) span").text.include? "..."
+#        locations = doc.css("div.extra-info p:nth-child(1) span a").attribute("onclick").value[23..-18]
           
-        else
-         programs = doc.css("div.extra-info p:nth-child(2) span").text.split.join(' ')
+#        else
+        programs = doc.css("div.extra-info p:nth-child(2) span").text.split.join(' ')
+#        locations = doc.css("div.extra-info p:nth-child(1) span").text.split.join(' ')
          
-        end
+#        end
     binding.pry
   end     
     
