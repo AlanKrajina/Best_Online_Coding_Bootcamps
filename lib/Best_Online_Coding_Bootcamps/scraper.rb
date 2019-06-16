@@ -18,14 +18,14 @@ class BestOnlineCodingBootcamps::Scraper
     end
   end     
   
-
   def self.scrape_details(bootcamps)
     doc = Nokogiri::HTML(open("https://www.switchup.org/rankings/best-online-bootcamps#{bootcamps.url}"))
-    doc.css("article.copy p.litNoteText").each do |paragraph|
-      topic.content << paragraph.text.strip
-    end
+    
+      about = doc.css("h2.topic-title").text
+      website =
+      locations =
+      programs =
+      scholarships = 
+      info =
   end
- 
-
-
-end     
+end  
