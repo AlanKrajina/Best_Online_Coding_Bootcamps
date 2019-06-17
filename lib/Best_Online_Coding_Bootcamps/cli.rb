@@ -26,7 +26,6 @@ class BestOnlineCodingBootcamps::CLI
 
 
   def prints(bootcamp)
-#    binding.pry
       puts "#{bootcamp.about}"
       puts "#{bootcamp.website}"
       puts "#{bootcamp.locations}"
