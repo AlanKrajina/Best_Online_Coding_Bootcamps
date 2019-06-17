@@ -14,7 +14,6 @@ class BestOnlineCodingBootcamps::Scraper
         subjects = camp.css("table tr:nth-child(3) td").text.split.join(' ')
         url = camp.css("div.ranking-item__header h3 a").attribute("href").value 
         BestOnlineCodingBootcamps::Bootcamps.new(name,rating,subjects,url)
-  #      binding.pry
     end
   end     
 
