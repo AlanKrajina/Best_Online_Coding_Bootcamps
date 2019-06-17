@@ -14,8 +14,8 @@ class BestOnlineCodingBootcamps::CLI
           puts ""
           puts "Here is our list:".upcase.blue
           puts ""
-          @bootcamps = BestOnlineCodingBootcamps::Bootcamps.all
-            @bootcamps.each_with_index do |camp,index|
+          bootcamps = BestOnlineCodingBootcamps::Bootcamps.all
+            bootcamps.each_with_index do |camp,index|
             puts "#{index+1}. #{camp.name}".red
             print "  Rating: ".light_blue
             puts "#{camp.rating}"
@@ -33,15 +33,9 @@ class BestOnlineCodingBootcamps::CLI
     input = gets.to_i
       
     if input <= 46 && input > 0
-      
-    bootcamp = BestOnlineCodingBootcamps::Bootcamps.find_all(input.to_i)
-    
-    #if statement so it doesnt repeat scraping
-    
-    
-    bootcamp.get_details
-    prints(bootcamp)
-
+      bootcamp = BestOnlineCodingBootcamps::Bootcamps.find_all(input.to_i)
+      bootcamp.get_details
+      prints(bootcamp)
     else
       puts ""
       puts "Wrong input, press '1' to see the list again.".red
@@ -64,7 +58,7 @@ class BestOnlineCodingBootcamps::CLI
       puts ""
       puts "Wrong input, try again.".red
       start
-end
+    end
   end
 
   def beginning 
