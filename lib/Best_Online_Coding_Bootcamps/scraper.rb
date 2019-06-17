@@ -3,7 +3,7 @@ require 'nokogiri'
 require "pry"
 
 class BestOnlineCodingBootcamps::Scraper
-=begin
+
   def self.scrape_index_page
     html = open("https://www.switchup.org/rankings/best-online-bootcamps")
     doc = Nokogiri::HTML(html)
@@ -16,7 +16,7 @@ class BestOnlineCodingBootcamps::Scraper
         BestOnlineCodingBootcamps::Bootcamps.new(name, rating, subjects, url)
     end
   end     
-=end    
+
   def self.scrape_details(bootcamps)
     html = open("https://www.switchup.org#{bootcamps.url}")
     doc = Nokogiri::HTML(html)
