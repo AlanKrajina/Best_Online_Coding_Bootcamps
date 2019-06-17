@@ -21,7 +21,8 @@ class BestOnlineCodingBootcamps::CLI
     input = gets.strip
 
     bootcamp = BestOnlineCodingBootcamps::Bootcamps.find_all(input.to_i)
-
+    #if statement so it doesnt repeat scraping
+    bootcamp.get_details
     prints(bootcamp)
 
   end

@@ -13,17 +13,15 @@ class BestOnlineCodingBootcamps::Bootcamps
   end
 
   def self.all
+   @@all.empty? ? BestOnlineCodingBootcamps::Scraper.scrape_index_page : nil
    @@all
-#  @@all.empty? ? BestOnlineCodingBootcamps::Scraper.scrape_index_page : nil
   end
   
   def self.find_all(id)
     self.all[id-1]
   end
 
-=begin
   def get_details
    BestOnlineCodingBootcamps::Scraper.scrape_details(self)
   end
-=end 
 end
