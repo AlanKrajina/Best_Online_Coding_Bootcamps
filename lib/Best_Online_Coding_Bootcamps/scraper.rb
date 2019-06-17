@@ -31,8 +31,6 @@ class BestOnlineCodingBootcamps::Scraper
         
       if cnd1 then bootcamps.info = doc.css("div.span12 blockquote.topic-text p a").attribute("onclick").value[35..-25].gsub("<\\/p>\\n\\n<p>", " ").gsub("\\n<br />", " ").gsub("\\", " ") elsif !cnd1 then bootcamps.info = doc.css("div.span12 blockquote.topic-text p").text.chomp end
         
-      if cnd2 then bootcamps.scholarships = doc.css("div.extra-info p:nth-child(3) span a").attribute("onclick").value[23..-18] elsif !cnd2 then bootcamps.scholarships = doc.css("div.extra-info p:nth-child(3) span").text.split.join(' ') end
-        
       if cnd3 then bootcamps.programs = doc.css("div.extra-info p:nth-child(2) span a").attribute("onclick").value[23..-18] elsif !cnd3 then bootcamps.programs = doc.css("div.extra-info p:nth-child(2) span").text.split.join(' ') end
         
       if cnd4 then bootcamps.locations = doc.css("div.extra-info p:nth-child(1) span a").attribute("onclick").value[23..-18] elsif !cnd4 then bootcamps.locations = doc.css("div.extra-info p:nth-child(1) span").text.split.join(' ') end
