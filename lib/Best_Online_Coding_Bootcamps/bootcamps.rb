@@ -9,19 +9,15 @@ class BestOnlineCodingBootcamps::Bootcamps
     @rating = rating
     @subjects = subjects
     @url = url
-    @about = about
-    @website = website
-    @locations = locations
-    @programs = programs
-    @scholarships = scholarships
-    @info = info
     @@all << self
   end
 
   def self.all
-    @@all
+#    binding.pry
+#   @@all.empty? ? BestOnlineCodingBootcamps::Scraper.scrape_index_page : nil
+   @@all
   end
-
+  
   def self.find(id)
     self.all[id-1]
   end

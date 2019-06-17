@@ -7,9 +7,9 @@ class BestOnlineCodingBootcamps::CLI
 
   def start
   
-    input = gets.strip
+ #   input = gets.strip
 
-    bootcamps = BestOnlineCodingBootcamps::Bootcamps.find(input.to_i)
+    bootcamps = BestOnlineCodingBootcamps::Bootcamps.all
 
     prints(bootcamps)
 
