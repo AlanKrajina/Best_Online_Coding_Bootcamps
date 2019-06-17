@@ -9,8 +9,8 @@ class BestOnlineCodingBootcamps::CLI
     puts "This is the list of all bootcamps:"
     puts "1.LEVEL list of all bootcamps..."
     
-    @bootcamp = BestOnlineCodingBootcamps::Bootcamps.all
-        @bootcamp.each do |camp|
+    @bootcamps = BestOnlineCodingBootcamps::Bootcamps.all
+        @bootcamps.each do |camp|
         puts "#{camp.name} -- #{camp.rating} -- #{camp.subjects}"
         end
     
@@ -18,20 +18,20 @@ class BestOnlineCodingBootcamps::CLI
     puts "Type a number to select the bootcamp you want more info"
     input = gets.strip
 
-    bootcamps = BestOnlineCodingBootcamps::Bootcamps.find_all(input.to_i)
+    bootcamp = BestOnlineCodingBootcamps::Bootcamps.find_all(input.to_i)
 
-    prints(bootcamps)
+    prints(bootcamp)
 
   end
 
 
-  def prints(bootcamps)
+  def prints(bootcamp)
 #    binding.pry
-      puts "#{bootcamps.about}"
-      puts "#{bootcamps.website}"
-      puts "#{bootcamps.locations}"
-      puts "#{bootcamps.programs}"
-      puts "#{bootcamps.scholarships}"
+      puts "#{bootcamp.about}"
+      puts "#{bootcamp.website}"
+      puts "#{bootcamp.locations}"
+      puts "#{bootcamp.programs}"
+      puts "#{bootcamp.scholarships}"
   end
 
 end
