@@ -1,3 +1,6 @@
+require 'colorize'
+
+
 class BestOnlineCodingBootcamps::CLI
   
   def call
@@ -10,8 +13,10 @@ class BestOnlineCodingBootcamps::CLI
     puts "1.LEVEL list of all bootcamps..."
     
     bootcamps = BestOnlineCodingBootcamps::Bootcamps.all
-        bootcamps.each do |camp|
-        puts "#{camp.name} -- #{camp.rating} -- #{camp.subjects}"
+        bootcamps.each_with_index do |camp,index|
+        puts "#{index+1}. #{camp.name}".on_blue
+        puts "  Rating: #{camp.rating}".light_blue
+        puts "  Subjects: #{camp.subjects}".light_blue
         end
     
     
