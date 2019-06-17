@@ -37,6 +37,8 @@ class BestOnlineCodingBootcamps::CLI
     bootcamp = BestOnlineCodingBootcamps::Bootcamps.find_all(input.to_i)
     
     #if statement so it doesnt repeat scraping
+    
+    
     bootcamp.get_details
     prints(bootcamp)
 
@@ -75,7 +77,7 @@ end
 
   def prints(bootcamp)
       puts ""
-      puts " #{bootcamp.about}:".red
+      puts " #{bootcamp.about}:".upcase.red
       puts " "
       puts "--------------------------------Website:----------------------------------------".light_blue
       puts " "
