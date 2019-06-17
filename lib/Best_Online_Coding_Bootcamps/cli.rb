@@ -9,8 +9,16 @@ class BestOnlineCodingBootcamps::CLI
 
 
   def start
-    puts "This is the list of all bootcamps:".on_blue
-
+    puts ""
+    print "Welcome to the 2019 Best Online Coding Bootcamps list by: "
+    puts "Switchup".blue
+    puts ""
+    puts "Press '1' if you would like to see the list or press '2' to exit"
+    
+    input = gets.strip
+      case input
+    puts "Here's our list:"
+    
     bootcamps = BestOnlineCodingBootcamps::Bootcamps.all
         bootcamps.each_with_index do |camp,index|
         puts "#{index+1}. #{camp.name}".red
