@@ -1,6 +1,4 @@
 require 'colorize'
-
-
 class BestOnlineCodingBootcamps::CLI
   
   def call
