@@ -13,8 +13,8 @@ class BestOnlineCodingBootcamps::Scraper
         rating = camp.css("div.ranking-item__header--left span.ranking-item__rating--value").text.split.join(' ')
         subjects = camp.css("table tr:nth-child(3) td").text.split.join(' ')
         url = camp.css("div.ranking-item__header h3 a").attribute("href").value 
-        BestOnlineCodingBootcamps::Bootcamps.new(name, rating, subjects, url)
-        binding.pry
+        BestOnlineCodingBootcamps::Bootcamps.new(name,rating,subjects,url)
+ #       binding.pry
     end
   end     
 
@@ -36,6 +36,5 @@ class BestOnlineCodingBootcamps::Scraper
       if cnd3 then programs = doc.css("div.extra-info p:nth-child(2) span a").attribute("onclick").value[23..-18] elsif !cnd3 then programs = doc.css("div.extra-info p:nth-child(2) span").text.split.join(' ') end
         
       if cnd4 then locations = doc.css("div.extra-info p:nth-child(1) span a").attribute("onclick").value[23..-18] elsif !cnd4 then locations = doc.css("div.extra-info p:nth-child(1) span").text.split.join(' ') end
-        binding.pry
   end
 end  

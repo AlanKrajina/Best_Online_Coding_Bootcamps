@@ -10,10 +10,10 @@ class BestOnlineCodingBootcamps::Bootcamps
     @subjects = subjects
     @url = url
     @@all << self
+
   end
 
   def self.all
-#    binding.pry
 #   @@all.empty? ? BestOnlineCodingBootcamps::Scraper.scrape_index_page : nil
    @@all
   end
