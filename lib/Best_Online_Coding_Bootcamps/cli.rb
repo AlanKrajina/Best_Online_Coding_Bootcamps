@@ -18,7 +18,7 @@ class BestOnlineCodingBootcamps::CLI
     puts "Type a number to select the bootcamp you want more info"
     input = gets.strip
 
-    bootcamps = BestOnlineCodingBootcamps::Bootcamps.find(input.to_i)
+    bootcamps = BestOnlineCodingBootcamps::Bootcamps.find_all(input.to_i)
 
     prints(bootcamps)
 

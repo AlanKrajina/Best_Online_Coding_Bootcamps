@@ -18,7 +18,7 @@ class BestOnlineCodingBootcamps::Bootcamps
    @@all
   end
   
-  def self.find(id)
+  def self.find_all(id)
     self.all[id-1]
   end
 
