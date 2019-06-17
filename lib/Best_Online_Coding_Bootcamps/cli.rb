@@ -1,11 +1,23 @@
 class BestOnlineCodingBootcamps::CLI
   
   def call
-    put
+    start
   end
 
 
-  def put(bootcamps)
+  def start
+  
+    input = gets.strip
+
+    bootcamps = BestOnlineCodingBootcamps::Bootcamps.find(input.to_i)
+
+    prints(bootcamps)
+
+  end
+
+
+
+  def prints(bootcamps)
       puts "#{bootcamps.name}"
       puts "#{bootcamps.rating}"
       puts "#{bootcamps.url}"

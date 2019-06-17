@@ -18,12 +18,16 @@ class BestOnlineCodingBootcamps::Bootcamps
     @@all << self
   end
 
- def self.all
-   @@all
- end
+  def self.all
+    @@all
+  end
 
- def get_details
+  def self.find(id)
+    self.all[id-1]
+  end
+
+  def get_details
    BestOnlineCodingBootcamps::Scraper.scrape_details(self)
- end
+  end
  
 end
