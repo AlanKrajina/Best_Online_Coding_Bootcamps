@@ -9,8 +9,8 @@ class BestOnlineCodingBootcamps::CLI
     puts "This is the list of all bootcamps:"
     puts "1.LEVEL list of all bootcamps..."
     
-    @bootcamps = BestOnlineCodingBootcamps::Bootcamps.all
-        @bootcamps.each do |camp|
+    bootcamps = BestOnlineCodingBootcamps::Bootcamps.all
+        bootcamps.each do |camp|
         puts "#{camp.name} -- #{camp.rating} -- #{camp.subjects}"
         end
     
