@@ -1,4 +1,3 @@
-require "pry"
 class BestOnlineCodingBootcamps::Bootcamps
     attr_accessor :name, :rating, :subjects, :url, :about, :website, :locations, :programs, :info
 
@@ -11,7 +10,7 @@ class BestOnlineCodingBootcamps::Bootcamps
     @url = url
     @@all << self
   end
-
+  
   def self.all
    @@all.empty? ? BestOnlineCodingBootcamps::Scraper.scrape_index_page : nil
    @@all

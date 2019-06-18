@@ -1,6 +1,5 @@
 require 'open-uri'
 require 'nokogiri'
-require "pry"
 class BestOnlineCodingBootcamps::Scraper
 
   def self.scrape_index_page
