@@ -16,7 +16,7 @@ git clone git@github.com:AlanKrajina/Best_Online_Coding_Bootcamps.git
 
 And then execute:
 
-    $ cd git@github.com:AlanKrajina/Best_Online_Coding_Bootcamps.git
+    $ cd Best_Online_Coding_Bootcamps
 
 After:
 
