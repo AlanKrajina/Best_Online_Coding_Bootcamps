@@ -1,8 +1,13 @@
-# BestOnlineCodingBootcamps
+# Best_Online_Coding_Bootcamps
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/Best_Online_Coding_Bootcamps`. To experiment with that code, run `bin/console` for an interactive prompt.
+Best_Online_Coding_Bootcamps CLI Gem will help you find the best online bootcamp for you.
+This list of the 46 best online coding bootcamps offers a range of subjects such as web development, data science, and cyber security. 
+Gem is 2 level deep with the first one giving information like the name, rating and subjects it offers and the second level goes further and lists the bootcamp webpage, locations, programs and overall info.
 
-TODO: Delete this and the text above, and describe your gem
+Website that was used to scrape and get all the information is [Best_Online_Coding_Bootcamps](https://www.switchup.org/rankings/best-online-bootcamps)
+
+![SWITCHUP](https://en.wikipedia.org/wiki/SwitchUp#/media/File:Switchup_logomark.png "SWITCHUP")
+
 
 ## Installation
 
