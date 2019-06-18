@@ -8,23 +8,24 @@ Website that was used to scrape and get all the information is [Best_Online_Codi
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add to IDE:
 
-```ruby
-gem 'Best_Online_Coding_Bootcamps'
+```
+git clone git@github.com:AlanKrajina/Best_Online_Coding_Bootcamps.git
 ```
 
 And then execute:
 
-    $ bundle
+    $ cd git@github.com:AlanKrajina/Best_Online_Coding_Bootcamps.git
 
-Or install it yourself as:
+After:
 
-    $ gem install Best_Online_Coding_Bootcamps
-
+    $ bundle install
+    
+    
 ## Usage
 
-TODO: Write usage instructions here
+Type "ruby ./bin/Best_Online_Coding_Bootcamps" in the command line.
 
 ## Development
 
