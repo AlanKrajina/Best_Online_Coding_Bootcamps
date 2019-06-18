@@ -4,10 +4,7 @@ Best_Online_Coding_Bootcamps CLI Gem will help you find the best online bootcamp
 This list of the 46 best online coding bootcamps offers a range of subjects such as web development, data science, and cyber security. 
 Gem is 2 level deep with the first one giving information like the name, rating and subjects it offers and the second level goes further and lists the bootcamp webpage, locations, programs and overall info.
 
-Website that was used to scrape and get all the information is [Best_Online_Coding_Bootcamps](https://www.switchup.org/rankings/best-online-bootcamps)
-
-![SWITCHUP](https://en.wikipedia.org/wiki/SwitchUp#/media/File:Switchup_logomark.png "SWITCHUP")
-
+Website that was used to scrape and get all the information is [Best_Online_Coding_Bootcamps](https://www.switchup.org/rankings/best-online-bootcamps).
 
 ## Installation
 
