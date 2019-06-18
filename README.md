@@ -25,7 +25,7 @@ After:
     
 ## Usage
 
-Type "ruby ./bin/Best_Online_Coding_Bootcamps" in the command line.
+Type `ruby ./bin/Best_Online_Coding_Bootcamps` in the command line.
 
 ## Development
 
