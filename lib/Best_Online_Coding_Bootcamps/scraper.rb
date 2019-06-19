@@ -1,5 +1,6 @@
 require 'open-uri'
 require 'nokogiri'
+require 'pry'
 class BestOnlineCodingBootcamps::Scraper
 
   def self.scrape_index_page
@@ -35,12 +36,12 @@ class BestOnlineCodingBootcamps::Scraper
         bootcamps.locations = doc.css("div.extra-info p:nth-child(1) span a").attribute("onclick").value[23..-18]
         else
           bootcamps.locations = doc.css("div.extra-info p:nth-child(1) span").text.split.join(' ') end   
-      
+  #    binding.pry
       if !cnd1 
        bootcamps.info = doc.css("div.span12 blockquote.topic-text p").text.chomp 
         elsif cnd1 && !doc.css("div.span12 blockquote.topic-text p a").attribute("href").value.include?("https")
         bootcamps.info = doc.css("div.span12 blockquote.topic-text p a").attribute("onclick").value[35..-24].gsub("<\\/p>\\n\\n<p>", " ").gsub("\\n<br />", " ").gsub("\\", " ") 
         else 
-          bootcamps.info = doc.css("div.span12 blockquote.topic-text p").text.chomp end
+          bootcamps.info = doc.css("div.span12 blockquote.topic-text p:nth-child(3) a").attribute("onclick").value[35..-52].gsub("<a"," ").gsub("a>"," ").gsub("<\\/p>\\n\\n<p>"," ") end
   end
 end  
